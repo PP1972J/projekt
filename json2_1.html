@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tekst</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script>
+
+fetch('http://mcast.pl/workon/agregator/agregator.php')
+.then(response => response.json())
+
+.then (function (data){
+	var x = '';
+	for (i = 0; i < data.agregator.length; i++) {
+	
+	x += '<div class ="col-sm-6 col-md-4 col-lg-3">'   
+	x += '<div class="card text-white bg-info mb-3">'
+	x += '<h1><span class="badge badge-secondary">'+ data.agregator[i].category +'</span></h1>';
+	x += '<img src="http://mcast.pl/workon/agregator/'+ data.agregator[i].thumbnail +'" style= "width: 150px; high: 150px; margin-left: auto; margin-right: auto;">';
+	x += '<h1>'+ data.agregator[i].title +'</h1>';
+	x += '<p style="text-align: justify;">'+ data.agregator[i].body+'</p>'
+	x += '<a href="'+ data.agregator[i].link+'"class="btn btn-primary">LINK</a>'
+	x +='</div>'
+	x +='</div>'
+	
+	
+	
+
+
+document.getElementById("txt").innerHTML=x;
+}
+
+
+
+})
+
+
+
+
+
+
+
+
+</script>
+</head>
+
+<body style="background-color: black;">
+<div class = "container">
+<div class = "row" id= "txt">
+
+
+
+ </div>
+ </div>
+ 
+ 
+
+
+
+
+
+
+
+</body>
+</html>
+
+
